@@ -36,20 +36,21 @@ Esta aplicación actúa como una **capa de presentación dinámica (Showcase)** 
 ## 4. Arquitectura y Decisiones Técnicas
 
 ### 4.1. Enfoque "Zero-Build" / Jamstack Puro
-- **Single Page Application (SPA) en un solo archivo**: Todo el frontend está contenido en `index.html` combinando HTML5 semántico, utilidades modernas de CSS y JavaScript nativo asíncrono.
+- **Estructura Modular Limpia**: Código desacoplado en tres archivos principales: [`index.html`](file:///c:/Users/Rod/Desktop/code/MisApps/index.html) (estructura y accesibilidad), [`style.css`](file:///c:/Users/Rod/Desktop/code/MisApps/style.css) (diseño, efectos y animaciones) y [`app.js`](file:///c:/Users/Rod/Desktop/code/MisApps/app.js) (lógica reactiva y consumo de APIs).
 - **Sin herramientas de compilación complejas**: No requiere `npm install`, Webpack o Vite para ejecutarse; puede correrse abriendo directamente el archivo o alojarse en cualquier servidor estático (GitHub Pages, Vercel, Netlify).
 
 ### 4.2. Stack Tecnológico
 - **HTML5**: Marcado accesible con atributos ARIA y jerarquía semántica para SEO.
-- **Tailwind CSS (CDN)**: Sistema de diseño atómico y responsivo con paleta de colores personalizada en modo oscuro.
-- **Vanilla JavaScript (ES6+)**: Lógica reactiva para peticiones asíncronas (`fetch`), gestión de estado local en memoria, manipulación del DOM y manejo de `localStorage`.
+- **Tailwind CSS + CSS3 Vanilla (`style.css`)**: Sistema de diseño atómico y responsivo con paleta de colores personalizada en modo oscuro, efectos de desenfoque (*glassmorphism*) y *glows* ambientales.
+- **Vanilla JavaScript ES6+ (`app.js`)**: Lógica reactiva para peticiones asíncronas (`fetch`), gestión de estado local en memoria, manipulación del DOM, control de modales y manejo seguro de `localStorage`.
 - **Google Fonts (Outfit)**: Tipografía moderna y legible de alto impacto estético.
-- **GitHub REST API v3**: Fuente de datos en vivo (`/users/{username}` y `/users/{username}/repos`).
+- **GitHub REST API v3**: Fuente de datos en vivo (`/users/{username}`, `/users/{username}/repos`, `/traffic`, `/pages`, `/languages`).
 
 ### 4.3. Resiliencia y Control de Límites de la API
 - **Manejo de Rate Limit**: La API pública de GitHub permite hasta 60 consultas/hora por IP. La aplicación incluye un panel modal de configuración donde el usuario puede ingresar un *Personal Access Token (PAT)* opcional.
 - **Privacidad Total**: Dicho token se almacena exclusivamente en el `localStorage` del navegador del cliente y nunca se envía a servidores intermediarios.
 - **Feedback Visual y Estados**: Manejo de estados de carga con *Skeleton loaders* (`animate-pulse`), estado de error amigable con botón de reintento, y estado vacío (*empty state*) cuando no hay coincidencias de búsqueda.
+- **Modal de Estadísticas y Tráfico**: Consulta bajo demanda (`/traffic/views`, `/traffic/clones`, `/traffic/popular/referrers`, `/pages`, `/languages`, `/commits`) para visualizar analítica de tráfico, estado del despliegue en Pages y barra gráfica de composición de lenguajes sin saturar la interfaz principal de las tarjetas.
 
 ---
 

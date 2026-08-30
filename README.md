@@ -31,6 +31,7 @@ En lugar de navegar por una lista técnica y estática, esta aplicación te ofre
 - 🔍 **Buscador Inteligente**: Encuentra proyectos en milisegundos escribiendo palabras clave, nombres o tecnologías.
 - 🏷️ **Filtros por Tecnología**: Filtra por JavaScript, HTML, TypeScript, Python o cualquiera de los lenguajes utilizados.
 - 🎛️ **Ordenamiento Personalizado**: Ordena los proyectos por los más recientes, más populares (estrellas), con más actividad o por orden alfabético.
+- 📊 **Modal de Métricas y Tráfico**: Consulta analítica de tráfico (vistas, visitantes únicos, clones), estado de despliegue en GitHub Pages, desglose porcentual de lenguajes y último commit de cada repositorio con un solo clic.
 - 🌙 **Diseño Oscuro Premium**: Interfaz cuidada con estética *glassmorphism*, animaciones sutiles y total adaptación a teléfonos móviles, tablets y computadoras.
 
 ---
@@ -53,10 +54,11 @@ En lugar de navegar por una lista técnica y estática, esta aplicación te ofre
   * **Más forks 🍴**: Proyectos con más bifurcaciones.
   * **Nombre (A-Z)**: Orden alfabético.
 
-### 5. 🚀 Abrir la Demo o el Código
-* Cada tarjeta de proyecto cuenta con botones directos:
+### 5. 🚀 Acciones Rápidas en cada Tarjeta
+* Cada tarjeta de proyecto cuenta con 3 botones:
+  * **Código 📦**: Abre el código fuente en GitHub para que puedas revisarlo o clonarlo.
+  * **Stats 📊**: Abre una ventana modal con el tráfico de visitas, clones, estado de GitHub Pages, gráfica de lenguajes y última actividad.
   * **Ver Demo 🚀**: Te redirige a la aplicación funcional desplegada en la web.
-  * **Código / Repositorio 📦**: Abre el código fuente en GitHub para que puedas revisarlo o clonarlo.
 
 ---
 
